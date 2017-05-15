@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        *{
+            user-select: none;
+        }
+        .sence{
+            width: 1000px;
+            height: 100%;
+            background: #ccc;
+            margin: 0 auto;
+        }
+        .main{
+            width: 800px;
+            height: 100%;
+            float: left;
+            background: #96d73e;
+            position: relative;
+        }
+        .control{
+            width: 200px;
+            height: 100%;
+            background: #33f;
+            float: left;
+        }
+        .box{
+            width: 80%;
+            height: 50px;
+            margin: 10px auto;
+            background: #fff;
+            border-radius: 10px;
+        }
+        .name{
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .scor,.state,.life{
+            width: 80%;
+            height: 30px;
+            background: #00ffff;
+            margin:  0 auto;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+        }
+        .letter{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background-size: 100% 100%;
+        }
+        .btn{
+            width: 80%;
+            height: 30px;
+            border-radius: 5px;
+            background: #00ffff;
+            color: #000;
+            line-height: 30px;
+            text-align: center;
+            font-size: 20px;
+            margin: 30px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="sence">
+    <div class="main"></div>
+    <div class="control">
+        <div class="box">
+            <div class="name">得分</div>
+            <div class="scor">0</div>
+        </div>
+        <div class="box">
+            <div class="name">关卡</div>
+            <div class="state">1</div>
+        </div>
+        <div class="box">
+            <div class="name">生命值</div>
+            <div class="life">5</div>
+        </div>
+        <div class="btn start">开始</div>
+        <div class="btn pause">暂停</div>
+    </div>
+</div>
+</body>
+<script>
+    var main=document.querySelector(".main");
+    class Game{
+        constructor(main,scor,state,life,lists){
+            this.main=main;
+            this.num=3;
+            this.obj={};
+            this.scorele=scor;
+            this.scor=0;
+            this.stateele=state;
+            this.state=1;
+            this.speed=5;
+            this.lifeele=life;
+            this.life=5;
+            this.height=window.innerHeight;
+            this.startControl=true;
+            this.st=null;
+            this.lists=lists;
+//            this.bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+            this.bestscor=localStorage.bestscor?localStorage.bestscor:0;
+        }
+        _createLetter(){
+            var div=document.createElement("div");
+            div.className="letter";
+            do{
+                var zm=Math.floor(Math.random()*26+65);
+                var ch=String.fromCharCode(zm);
+            }while(this.obj[ch])
+            div.style.backgroundImage="url(img/"+ch+".png)";
+            do{
+                var le=Math.random()*720;
+            }while(this._check(le))
+            var to=-Math.random()*100;
+            div.style.left=le+"px";
+            div.style.top=to+"px";
+            this.obj[ch]={left:le,top:to,el:div}
+            this.main.appendChild(div);
+        }
+        _check(left){
+            for(var i in this.obj){
+                if(this.obj[i].left-80<left&&this.obj[i].left+80>left){
+                    return true
+                }
+            }
+        }
+        _play(){
+            for(var i=0;i<this.num;i++){//创建play函数来调用函数createLetter完成三个字母的随机创建
+                this._createLetter();
+            }
+            this._move();
+            this._onkeydown();
+            this.startControl=false;
+        }
+        _move(){
+            this.st=setInterval(function () {
+                for(var i in this.obj){
+                    var t=this.obj[i].top;
+                    t+=this.speed;
+                    this.obj[i].top=t;
+                    this.obj[i].el.style.top=t+"px";
+                    if(t>this.height){
+                        this.life--;
+                        this.lifeele.innerHTML=this.life;
+                        this.main.removeChild(this.obj[i].el);
+                        delete this.obj[i];
+                        this._createLetter();
+                        if(this.life==0){
+                            this._gameover()
+                            return;
+                        }
+                    }
+                }
+            }.bind(this),50)
+        }
+        _onkeydown(){
+            document.onkeydown=function (e) {
+                var keycode=e.keyCode;
+                var l=String.fromCharCode(keycode);
+                if(this.obj[l]){
+                    this.main.removeChild(this.obj[l].el);
+                    delete this.obj[l];
+                    this._upscor();
+                    if(this.scor%10==0){
+                        this._upstate();
+                    }
+                    this._createLetter();
+                }
+            }.bind(this)
+        }
+        _upscor(){
+            this.scor++;
+            this.scorele.innerHTML=this.scor;
+        }
+        _upstate(){
+            this.state++;
+            this.stateele.innerHTML=this.state;
+            if(this.state<=4){
+                this.num++;
+                this._createLetter();
+            }else {
+                this.speed++;
+            }
+        }
+        _gameover(){
+//            alert(`当前的分为${this.scor}`)
+//            if(this.scor<this.bestscor){
+//                console.log(`最高得分为${this.bestscor}`)
+//                console.log(`当前得分为${this.scor}`)
+//            }else{
+//                console.log(`最高得分为${this.scor}`)
+//                console.log(`当前得分为${this.scor}`)
+//                localStorage.bestscor=this.scor;
+//            }
+            if(this.bestscor.length<3||(this.bestscor.length>=3&&this.scor>this.bestscor[2].scor)){
+                var player=prompt("请输入姓名");
+                this.bestscor.push({player,scor:this.scor});
+                this.bestscor.sort(function (a,b) {
+                    if(a.scor>b.scor){
+                        return -1;
+                    }else{
+                        return 1;
+                    }
+                })
+                if(this.bestscor.length>3){
+                    this.bestscor.pop();
+                }
+                localStorage.bestscor=JSON.stringify(this.bestscor);
+            }
+            console.table(this.bestscor)
+            this.main.innerHTML="";
+            this.obj={};
+            this.speed=5;
+            this.scor=0;
+            this.scorele.innerHTML=0;
+            this.life=5;
+            this.lifeele.innerHTML=5;
+            this.state=1;
+            this.stateele.innerHTML=1;
+            this.startControl=true;
+            clearInterval(this.st);
+        }
+        pause(){
+            clearInterval(this.st);
+            document.onkeydown=null;
+        }
+        play(){
+            this._move();
+            this._onkeydown();
+        }
+
+    }
+    var start=document.querySelector(".start");
+    var scor=document.querySelector(".scor");
+    var state=document.querySelector(".state");
+    var life=document.querySelector(".life");
+    var pause=document.querySelector(".pause");
+    var r=new Game(main,scor,state,life);
+    start.onclick=function () {
+        if(r.startControl){
+            r.startControl=false;
+            r._play();
+        }
+
+    }
+    var flag=true;
+    pause.onclick=function () {
+        if(flag){
+            pause.innerHTML="继续"
+            r.pause();
+        }else{
+            pause.innerHTML="暂停"
+            r.play();
+        }
+        flag=!flag;
+    }
+
+</script>
+</html>

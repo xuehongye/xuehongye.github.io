@@ -1,0 +1,415 @@
+/*
+* @Author: asus
+* @Date:   2017-03-14 09:33:15
+* @Last Modified by:   asus
+* @Last Modified time: 2017-03-14 22:43:40
+*/
+header .header-top{
+	width: 100%;
+	height: 40px;
+	background: #444444;
+}
+.header-top main{
+	max-width: 976px;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #a8a8a8;
+	line-height: 40px;
+	text-align: right;
+
+}
+.header-nav{
+	width: 100%;
+	height: 44px;
+	background: rgba(0, 0, 0, 0.8);
+}
+.header-nav main{
+    /* width: 1024px; */
+	height: 100%;
+	margin: 0 auto;
+}
+.header-nav main ul li{
+				display: inline-block;
+				color: white;
+				
+				}
+.header-nav main ul{
+				margin: 0 auto;
+				text-align:justify;
+				line-height: 44px;
+
+			}
+.header-nav main ul:after{
+				content: "";
+				display: inline-block;
+				height: 0;
+				width: 100%;
+			}
+.banner{
+	background: #F2F2F2;
+	height: 496px; 
+	position: relative; 
+	
+}
+.banner img{
+	width: 144px;
+	height: 55px;
+	position: absolute;
+	top: 26px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.banner a{
+	display: block;
+	font-size: 30px;
+	color: #fff;
+}
+
+.banner .zj,.banner .yj{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: #A2A2A2;
+	
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+
+
+}
+.banner .zj{
+	left: 0;
+	text-align: center;
+	line-height: 64px;
+	opacity: 0;
+}
+.banner .yj{
+	right: 0;
+	text-align: center;
+	line-height: 64px;
+	opacity: 0;
+}
+
+.zj:hover,.yj:hover{
+	animation: xianshi 1s linear forwards;
+}
+.box{
+
+}
+@keyframes xianshi{
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 0.2;
+	}
+	40%{
+		opacity: 0.4;
+	}
+	60%{
+		opacity: 0.6;
+	}
+	80%{
+		opacity: 0.8;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.lunbo{
+	width: 180px;
+	height: 22px;
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	/* background: red; */
+}
+.lunbo1{
+	width: 50px;
+	height: 2px;
+	background:#808080;
+	float: left;
+ 
+	margin-top: 10px;
+	margin-right: 10px;
+
+
+}
+.lunbo .lunbo1:nth-child(1){
+    margin-left: 5px;
+}
+.lunbo .lunbo1:nth-child(3){
+    margin-left: 0;
+    margin-right:5px;
+}
+.lunbo .lunbo1:hover{
+	background:#000;
+}
+
+.box1{
+	width: 100%;
+	/* height: 200px; */
+
+}
+.box1 ul li{
+	float: left;
+	height: 200px;
+	display: block;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+footer{
+	width: 100%;
+	height: 421px;
+	background: #f2f2f2;
+	float: left;
+	margin-top: 2px;
+}
+.footer-main{
+	max-width: 1024px;
+	height: 401px;
+	margin: 0 auto;
+	/* background: blue; */
+	position: relative;
+}
+.footer-main .z1{
+	padding: 17px 0 11px;
+	font-size: 1px;
+	color: #888888;
+}
+.box2{
+	max-width: 980px;
+	height: 245px;
+	overflow: hidden;
+}
+dl{
+	width: 20%;
+	height: 210px;
+	overflow: hidden;
+	float: left;
+	margin-top: 11px;
+}
+dt{
+	font-size: 8px;
+
+}
+dd{
+	font-size: 8px;
+	margin-top: 10px;
+}
+.footer-main .z2{
+	padding: 28px 0 11px;
+	font-size: 1px;
+	color: #888888;
+}
+.footer-main .z3{
+	padding: 8px 0 11px;
+	font-size: 1px;
+	color: #888888;
+}
+
+footer .xiao .z1{
+padding: 17px 0 11px;
+	font-size: 1px;
+	color: #888888;
+}
+footer .xiao ul li .xiao1{
+		float: left;
+}
+footer .xiao ul li span{
+		float: right;
+}
+footer .xiao .z2{
+	padding: 28px 0 11px;
+	font-size: 1px;
+	color: #888888;
+}
+footer .xiao .z3{
+	padding: 8px 0 11px;
+	font-size: 1px;
+	color: #888888;
+}
+hr{
+	width: 100%;
+}
+
+
+
+
+
+@media screen and (min-width: 1024px){
+        	.header-top main{
+        		max-width: 976px;
+        		
+        		}
+        	
+        	.header-nav main {
+				width: 1024px;
+
+				}
+
+        	.banner {
+        		background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+        		background-image: url('../img/watch_alt_large.jpg');
+        	
+        	
+        	}
+        	.box1 ul li:nth-child(1){
+        		width: 25%;
+        		
+        		background-image: url('../img/imgs/accessories_large.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(2){
+        		width: 25%;
+        		
+        		background-image: url('../img/imgs/ipad_pro_large.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(3){
+        		width: 25%;
+        		
+        		background-image: url('../img/imgs/airpods_large.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(4){
+        		width: 25%;
+        		
+        		background-image: url('../img/imgs/iphone_upgrade_large.jpg');
+        		
+        	}
+        	.footer-main {
+        		padding: 0 25px;
+        	}
+
+}
+@media screen and (max-width: 1024px){
+
+        	.header-top main{
+        		padding: 0 25px;
+        		}
+        	.header-nav main{
+				padding: 0 22px;
+        	}
+        	.footer-main dl{
+        		width: 20%;
+        		
+        	}
+        	.footer-main {
+        		padding: 0 25px;
+        	}
+
+		
+
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	.banner {
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+        		background-image: url('../img/watch_alt_medium.jpg');
+        	
+        	
+        	}
+        	.box1 ul li:nth-child(1){
+        		width: 50%;
+        		
+        		background-image: url('../img/imgs/accessories_medium.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(2){
+        		width: 50%;
+        		
+        		background-image: url('../img/imgs/ipad_pro_medium.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(3){
+        		width: 50%;
+        		
+        		background-image: url('../img/imgs/airpods_medium.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(4){
+        		width: 50%;
+        		
+        		background-image: url('../img/imgs/iphone_upgrade_medium.jpg');
+        		
+        	}
+}
+@media screen and (min-width: 768px){
+        	.header-nav main .max-nav{
+				display: block;
+        	}
+        	.header-nav main .min-nav{
+				display: none;
+        	}
+        	footer .footer-main{
+        		display: block;
+        	}
+        	footer .xiao{
+        		display: none;
+        	}
+
+
+}
+@media screen and (max-width: 768px){
+        	.header-nav main .max-nav{
+				display: none;
+        	}
+        	.header-nav main .min-nav{
+				display:block;
+        	}
+            .banner {	
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+        	background-image: url('../img/hero_small.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(1){
+        		width: 100%;
+        		
+        		background-image: url('../img/imgs/accessories_small.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(2){
+        		width: 100%;
+        		
+        		background-image: url('../img/imgs/ipad_pro_small.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(3){
+        		width: 100%;
+        		
+        		background-image: url('../img/imgs/airpods_small.jpg');
+        		
+        	}
+        	.box1 ul li:nth-child(4){
+        		width: 100%;
+        		
+        		background-image: url('../img/imgs/iphone_upgrade_small.jpg');
+        		
+        	}
+        	footer .footer-main{
+        		display: none;
+        	}
+        	footer .xiao{
+        		display: block;
+        	}
+        	.xiao ul{
+        		width: 100%;
+        		
+        	}
+        	.xiao {
+        		padding: 0 25px;
+        	}
+
+}
+

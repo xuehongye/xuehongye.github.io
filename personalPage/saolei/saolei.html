@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            user-select: none;
+        }
+        .scene{
+            width:500px;
+            height: 500px;
+            border-top:1px solid #ccc;
+            border-left:1px solid #ccc;
+            float: left;
+            margin-left: 350px;
+            background:#333;
+        }
+        .block{
+            width: 49px;
+            height: 49px;
+            background: #333;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            float: left;
+            cursor: pointer;
+        }
+        .control{
+            width: 200px;
+            height: 500px;
+            float: left;
+            background:lightgray;
+        }
+        .lei{
+            /*background: ;*/
+        }
+        .show{
+            background: url("lei.jpg")center center no-repeat;
+            background-size: 100%;
+
+        }
+        .num{
+            background:#fff;
+            text-align: center;
+            line-height: 50px;
+        }
+        .flag{
+            background:url("qizhi.png")center center no-repeat;
+            background-size: 100%;
+        }
+        .colnum{
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color:#000;
+            border-radius:10px ;
+            background:lemonchiffon;
+            margin-left: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+        }
+        .mask{
+            width: 100%;
+            height:663px;
+            background:rgba(0,0,0,0.5);
+            position:fixed;
+            left:0;
+            top:0;
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+        .over{
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            border:1px solid red;
+            background:lightblue;
+            position:absolute;
+            left:510px;
+            top:170px;
+        }
+        .end{
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .restart{
+            width:80px;
+            height: 50px;
+            color:#fff;
+            border-radius: 10%;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 60px;
+            line-height: 50px;
+            background:olivedrab;
+            cursor: pointer;
+        }
+        .list>ul{
+            position: absolute;
+            width: 100%;
+            height:120px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 40px;
+            top:70px;
+            left:0;
+            background: #666;
+            display: none;
+            color:#fff;
+            z-index: 1;
+        }
+        .list>ul li{
+            width: 100%;
+            height: 40px;
+        }
+        .state>ul{
+            position: absolute;
+            width: 100%;
+            height:120px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 40px;
+            top:70px;
+            left:0;
+            background: #666;
+            display: none;
+            color:#fff;
+            z-index: 2;
+        }
+        .state>ul li{
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="scene"></div>
+<div class="control">
+    <time></time>
+    <div class="colnum flagnum">flag:10</div>
+    <div class="colnum timenum">time:240</div>
+    <div class="colnum start">开始</div>
+    <div class="colnum state">
+        <span>难度选择</span>
+        <ul>
+            <li class="easy">简单</li>
+            <li class="middle">中等</li>
+            <li class="difficult">困难</li>
+        </ul>
+    </div>
+    <div class="colnum list">
+        <span>排行榜</span>
+        <ul>
+            <li class="yi">第一名：</li>
+            <li class="er">第二名：</li>
+            <li class="san">第三名：</li>
+        </ul>
+    </div>
+
+</div>
+<div class="mask">
+    <div class="over">
+        <div class="end">游戏结束</div>
+        <div class="restart">restart</div>
+    </div>
+</div>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    var num=10;
+    var num1=10;
+    var bili=0.9;
+    var time=240;
+    var besttime=localStorage.besttime?JSON.parse(localStorage.besttime):[];
+// do while 创建雷
+    var t;
+
+    function times() {
+
+        $(".timenum").html("time:"+time);
+        if(time==0){
+            clearInterval(t);
+            gameover()
+        }
+        time--;
+    }
+    function createLei() {
+        do{
+            $(".scene").empty();
+            for(var i=0;i<10;i++){
+                for(var j=0;j<10;j++){
+                    var isLei=Math.random()>bili;
+                    $("<div>")
+                            .addClass(function () {
+                                if(isLei){
+                                    return "block lei";
+                                }else{
+                                    return "block";
+                                }
+                            })
+                            .attr("id",i+"-"+j)
+                            .data("pos",{x:i,y:j})
+                            .mousedown(mousedownEvent)
+                            .appendTo(".scene")
+                }
+            }}while($(".lei").length!=num);
+    }
+    $(".start").click(function () {
+        t=setInterval(times,1000);
+        createLei();
+    })
+//鼠标摁下判断左击还是右击
+    function mousedownEvent(e){
+        if(e.which==1){
+            leftclick.call(this);
+        }else{
+            rightclick.call(this);
+        }
+    }
+// 鼠标左击执行安全操作或者中雷
+    function leftclick() {
+        if($(this).hasClass("flag")){
+            return;
+        }
+        if($(this).hasClass("lei")){
+            $(".lei").addClass("show");
+            clearInterval(t);
+            gameover();
+        }else{
+            $(this).addClass("num");
+            var n=0;
+            var pos=$(this).data("pos");
+            for(var i=pos.x-1;i<=pos.x+1;i++){
+                for(var j=pos.y-1;j<=pos.y+1;j++){
+                    if($("#"+i+"-"+j).hasClass("lei")){
+                        n++;
+                    }
+                }
+            }
+            $(this).html(n);
+            if(n==0){
+                for(var i=pos.x-1;i<=pos.x+1;i++){
+                    for(var j=pos.y-1;j<=pos.y+1;j++){
+                        var obj=$("#"+i+"-"+j);
+                        if(obj.length==1&&!obj.hasClass("num")){
+                            leftclick.call(obj[0]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    function gameover() {
+
+        $(".mask").css("display","block");
+    }
+    $(".restart").click(function () {
+        time=240;
+        $(".mask").css("display","none");
+        t=setInterval(times,1000);
+        num=10;
+        num1=10;
+        $(".flagnum").html("flag:"+num);
+        createLei();
+    })
+// 鼠标右击执行排雷操作
+    function rightclick() {
+        if($(this).hasClass("num")){
+            return;
+        }
+        if($(this).hasClass("flag")){
+            $(this).removeClass("flag")
+            num++;
+        }else{
+            num--;
+            if(num<0){
+                num++;
+                alert("请重新选择");
+                return;
+            }
+            $(this).addClass("flag");
+           if(num==0){
+               if($(".flag").filter(".lei").length==num1){
+                   alert("成功");
+               }
+               if(besttime.length<3||(besttime.length>=3&&time>besttime[2].time1)){
+                   var player=prompt("请输入姓名");
+                   besttime.push({player ,time1:time});
+                   besttime.sort(function (a,b) {
+                       if(a.time1>b.time1){
+                           return -1;
+                       }else{
+                           return 1;
+                       }
+                   })
+                   if(besttime.length>3){
+                       besttime.pop();
+                   }
+                   localStorage.besttime=JSON.stringify(besttime);
+               }
+               $(".yi").html("第一名："+besttime[0].player)
+               $(".er").html("第二名："+besttime[1].player)
+               $(".san").html("第三名："+besttime[2].player)
+           }
+
+        }
+        $(".flagnum").html("flag:"+num);
+    }
+
+// 用户无法右击操作出现浏览器自带功能
+    $(document).on("contextmenu",function (e) {
+        e.preventDefault();
+    });
+    $(".list").click(function () {
+        $(".list>ul").slideToggle();
+    });
+    $(".state").click(function () {
+        $(".state>ul").slideToggle();
+    });
+    $(".easy").click(function () {
+        num=5;
+        bili=0.95;
+        num1=5;
+        $(".flagnum").html("flag:"+num);
+        createLei();
+    });
+    $(".middle").click(function () {
+        num=10;
+        bili=0.9;
+        num1=10;
+        $(".flagnum").html("flag:"+num);
+        createLei();
+    });
+    $(".difficult").click(function () {
+        num=15;
+        bili=0.85;
+        num1=15;
+        $(".flagnum").html("flag:"+num);
+        createLei();
+    });
+// data()
+</script>
+</html>

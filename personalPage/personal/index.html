@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Border Animation Effect with SVG</title>
+        <meta name="description" content="Border Animation Effect: Recreating the effect seen on carlphilippebrenner.com with SVG" />
+        <meta name="keywords" content="svg, border effect, animated border, line, grid item, hover, css" />
+        <meta name="author" content="Codrops" />
+        <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/shangehua.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav class="big">
+            <div class="warp">
+                Personal
+                <div id="menu2" class="menu">
+                    <ul>
+                        <li><a href="#">Intro</a></li>
+                        <li><a href="#">Exper</a></li>
+                        <li><a href="#">Achive</a></li>
+                        <li><a href="#">Produ</a></li>
+                    </ul>
+                    <div class="cls"></div>
+                </div>
+                <!--<div class="fang">-->
+                    <!--<ul>-->
+                        <!--<li class="jieshao"><a href="../凡客/index.html">Intro</a></li>-->
+                        <!--<li class="jingli"><a href="../小米/index.html">Exper</a></li>-->
+                        <!--<li class="chengjiu"><a href="../苹果/index.html">Achive</a></li>-->
+                        <!--<li class="zuopin"><a href="../天猫移动端/index.html">Produ</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            </div>
+        </nav>
+         <nav class="small">
+            <div class="warp">
+                Personal
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+             <div class="container">
+                <div id="cubeTransition">
+                    <div class="page1"><h2>cubeTransition.js</h2></div>
+                    <div class="page2"><h2 style='display:none'>Elegant,</h2></div>
+                    <div class="page3"><h2 style='position:absolute;left:0px;top:-150px'>exected!</h2></div>
+                    <div class="page4"><h2>Simple.</h2></div>
+                    <ul id="bullets"></ul>
+                </div>
+             </div>
+        </div>
+  
+
+        <div class="content">
+            <section class="demo-2">
+                <div class="grid">
+                    <div class="box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+                        </svg>
+                        <h3>P</h3>
+                        <span>PC端</span>
+                        <div class="aa mlj1" style="position: absolute;left:0;right:0;bottom:60px;">
+                            <a href="../top cat/index.html">天猫</a>
+                            <a href="../China Mobile/index.html">中国移动</a>
+                            <a href="../fanke/index.html">凡客</a>
+                        </div>  
+                        <div class="aa mlj2" style="position: absolute;left:0;right:0;bottom:30px">
+                            <a href="../jingdong/index.html">京东</a>
+                            <a href="../meishi/index.html">美食</a>
+                            <a href="../xiaomi/index.html">小米</a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+                        </svg>
+                        <h3>X</h3>
+                        <span>响应式</span>
+                        <div class="aa aas " style="position: absolute;left:0;right:0;bottom:0px">
+                            <a href="../apple/index.html">苹果</a>
+                            <a href="../shafa/index.html">沙发网</a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+                        </svg>
+                        <h3>G</h3>
+                        <span>游戏</span>
+                        <div class="aa asl mlj1" style="position: absolute;left:0;right:0;bottom:60px">
+                            <a href="../Game/index.html">打字游戏</a>
+                            <a href="../saolei/saolei.html">扫雷</a>
+                        </div>
+                        <div class="aa asl mlj2" style="position: absolute;left:0;right:0;bottom:30px;">
+                            <a href="../huaban/huaban.html">画板</a>
+                            <a href="../todolist/todolist.html">记事本</a>
+                        </div>
+                    </div>
+                </div><!-- /grid -->
+            </section>
+        </div>
+        <footer>
+            <div class="footer1">
+                <div class="left">
+                    Copyright © 2016.Company name All rights reserved.
+                </div>
+                <ul class="right">
+                    <li>Skype</li>
+                    <li>Linked</li>
+                    <li>Twitter</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+            <!-- <div class="footer2">
+                <div class="top">
+                    Copyright © 2016.Company name All rights reserved.
+                </div>
+                <ul class="bottom">
+                    <li>Skype</li>
+                    <li>Linked </li>
+                    <li>Twitter</li>
+                    <li>Facebook</li>
+                </ul>
+            </div> -->
+        </footer>
+    </body>
+    <script src="js/jQuery.js"></script>
+    <script language="javascript">
+        $(document).ready(function() {
+            $("#menu2 li a").wrapInner( '<span class="out"></span>' );
+
+            $("#menu2 li a").each(function() {
+                $( '<span class="over">' +  $(this).text() + '</span>' ).appendTo( this );
+            });
+
+            $("#menu2 li a").hover(function() {
+                $(".out",	this).stop().animate({'top':	'90px'},	300); // move down - hide
+                $(".over",	this).stop().animate({'top':	'0px'},		300); // move down - show
+
+            }, function() {
+                $(".out",	this).stop().animate({'top':	'0px'},		300); // move up - show
+                $(".over",	this).stop().animate({'top':	'-90px'},	300); // move up - hide
+            });
+
+        });
+
+    </script>
+    <script>
+function animationIn(i){
+console.log(i,'i\'m in')
+switch(i) {
+    case 1:
+        $('.page2 h2').fadeIn();
+        break;
+    case 2:
+        $('.page3 h2').animate({top:'40%',left:'30%'},1000);
+        break;
+    case 3:
+               setTimeout(function(){
+         $('.page4 h2').addClass('ani')
+         console.log('hhh')
+        },0)
+        break;
+    default:
+        ;
+}
+}
+
+function animationOut(i){
+console.log(i,'i\'m out')
+switch(i) {
+    case 1:
+        $('.page2 h2').fadeOut();
+        break;
+    case 2:
+        $('.page3 h2').animate({top:0,left:0},1000);
+        break;
+    case 3:
+        $('.page4 h2').removeClass('ani')
+        break;
+    default:
+        ;
+}
+}
+</script>
+<script src='js/mousewheel.js'></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script src="js/cubeTransition.js"></script>
+
+</html>

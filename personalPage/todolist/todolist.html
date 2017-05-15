@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;height: 100%;font-family: 微软雅黑;
+        }
+        .title{
+            width: 100%;height: 100px;
+            background: pink;
+            line-height: 100px;
+            font-size: 20px;
+            font-weight: 400;
+            padding-left: 30px;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .inputarea{
+            width: 100%;height: 50px;
+        }
+        #text{
+            width: 300px;height: 50px;float: left;
+        }
+        #submit{
+            width: 150px;height: 50px;
+            float: left;background: green;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color:#fff;
+        }
+        .show{
+            width: 100%;
+            flex-grow: 1;   /* 把剩余空间占满 */
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan{
+            width: 50%;
+            height: 80%;
+            overflow: auto;
+            background: #369;
+            float: left;
+        }
+        .done{
+            width: 50%;
+            height: 80%;
+            float: right;
+            overflow: auto;
+            background:gray;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            width: 100%;
+            height:auto;
+        }
+        ul li input{
+            float: left;
+            width: 30px;height: 30px;
+            margin: 0;
+
+        }
+        ul li span{
+            width: 300px;
+            height: auto;
+            line-height: 30px;
+            color: #fff;
+            padding-left: 30px;
+        }
+        ul li time{
+            width: 200px;
+            height: 30px;
+            float: right;
+            background: red;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+        }
+        .contenttitle{
+            width: 50%;height:20px;
+            float: left;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: red;
+            background:#ccc;
+        }
+        .title1{width: 100%;height: auto}
+    </style>
+</head>
+<body>
+<div class="title">TODO LIST</div>
+<div class="inputarea">
+    <input type="text" id="text">
+    <input type="button" id="submit" value="提交">
+</div>
+<div class="title1">
+    <div class="contenttitle">未完成</div>
+    <div class="contenttitle">已完成</div>
+</div>
+
+<div class="show">
+    <ul class="plan">
+        <li>
+            <input type="checkbox">
+            <span contenteditable="true">1233</span>
+            <time>2017/5/3</time>
+        </li>
+    </ul>
+    <ul class="done">
+        <li>
+            <input type="checkbox">
+            <span contenteditable="true">1233</span>
+            <time>2017/5/3</time>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    var text=document.querySelector("#text");
+    var submit=document.querySelector("#submit");
+    var plan=document.querySelector(".plan");
+    var done=document.querySelector(".done");
+    function getdata() {
+        return localStorage.todo?JSON.parse(localStorage.todo):[];
+    }
+    function savadate(data) {
+        localStorage.todo=JSON.stringify(data);
+    }
+    function rewrite() {
+        var data=getdata();
+        var str1="",str2=""
+        data.forEach(function (v,i) {
+            if(!v.done){
+                str1+=`<li id="${i}"><input type="checkbox" onfocus="changestate(this)"><span contenteditable="true" onblur="changecontent(this)">${v.content}</span><time>${time(v.time)}</time></li>`
+            }else{
+                str2+=`<li id="${i}"><input type="checkbox" onfocus="del(this)"><span contenteditable="true" >${v.content}</span><time>${time(v.time)}</time></li>`
+            }
+
+        })
+        plan.innerHTML=str1;
+        done.innerHTML=str2;
+
+    }
+    submit.onclick=function () {
+        if(text.value==""){
+            return
+        }
+        var val=text.value;
+        text.value="";
+        var data=getdata();
+        var date=new Date();
+        var time=date.getTime();
+        data.push({content:val,time,done:false});
+        savadate(data);
+        rewrite();
+    }
+    function time(t) {
+        var date=new Date();
+        date.setTime(t);
+        var year=date.getFullYear();
+        var month=setZero(date.getMonth()+1);
+        var day=setZero(date.getDate());
+        var hour=setZero(date.getHours());
+        var minutes=setZero(date.getMinutes())
+        var seconds=setZero(date.getSeconds())
+        return year+"/"+month+"/"+day+" "+hour+":"+minutes+":"+seconds;
+    }
+    function setZero(num) {
+        if(num<10){
+            return "0"+num;
+        }else{
+            return num;
+        }
+    }
+    function changestate(ele) {
+        var id=ele.parentNode.id;
+        var data=getdata();
+        data[id].done=true;
+        savadate(data);
+        rewrite();
+    }
+    function del(ele) {
+        var id=ele.parentNode.id;
+        var data=getdata();
+        data.splice(id,1);
+        savadate(data);
+        rewrite();
+    }
+    function changecontent(ele) {
+        var id=ele.parentNode.id;
+        var val=ele.innerHTML;
+        var data=getdata();
+        data[id].content=val;
+        savadate(data);
+        rewrite();
+    }
+</script>
+<html>

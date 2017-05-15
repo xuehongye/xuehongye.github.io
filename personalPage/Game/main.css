@@ -1,0 +1,332 @@
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+*{
+    user-select: none;
+}
+body{
+    margin: 0;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 24px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #000;
+    display: block;
+}
+.rank-list{
+    width:300px;
+    height: 300px;
+    position: fixed;
+    left:1%;
+    top:3%;
+    /*background: rgba(252, 234, 26, 0.53);*/
+    z-index: 65;
+    text-align:center;
+    border-radius: 15% 15%;
+}
+.rank-list p{
+    width: 100%;
+    height: 24px;
+    font-size: 24px;
+}
+.rank-list .list{
+    width: 100%;
+    height: 61px;
+    padding:10px;
+    font-size: 20px;
+}
+.rank-list .list .rank{
+    width: 43px;
+    height: 61px;
+    float: left;
+    background-size:contain;
+}
+.rank-list .list:nth-child(1) .rank{
+    background: url("img/1.png") center center;
+}
+.rank-list .list:nth-child(2) .rank{
+    background: url("img/2.png")center center;
+}
+.rank-list .list:nth-child(3) .rank{
+    background: url("img/3.png")center center;
+}
+.rank-list .list .name{
+    float:left;
+    text-align: left;
+    line-height: 61px;
+    margin-left: 5px;
+}
+@keyframes move{
+    0%{
+        transform:translateX(0);
+    }
+    25%{
+        transform:translateX(-30px);
+    }
+    50%{
+        transform:translateX(0px);
+    }
+    75%{
+        transform:translateX(30px);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+@keyframes rotate{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.music {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url(img/music.png) no-repeat center;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    z-index: 9999;
+    background-color: #FEC743;
+    border: 3px solid #fff;
+    animation: rotate 3s linear infinite;
+    cursor: pointer;
+}
+.sence{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(img/bg1.jpg);
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.startbox{
+    width:710px;height:400px;
+    position:absolute;
+    left:0;right:0;top:0;bottom:0;
+    margin:auto;
+    animation:move 3s linear infinite;
+}
+.top{
+    width:710px;height:250px;
+    background:url(img/logo.png) no-repeat center;
+}
+.bottom{
+    width:710px;height:150px;
+}
+.choose{
+    width:340px;height:100px;
+    float:left;
+    margin-top:50px;
+    margin-right: 30px;
+    cursor:pointer;
+    background:url(img/choose.png) no-repeat center;
+    transition:all 1s;
+}
+.choose:hover{
+    transform:scale(1.1);
+}
+.start{
+    width:340px;height:100px;
+    float:left;
+    margin-top: 50px;
+    cursor:pointer;
+    background:url(img/start.png) no-repeat center;
+    transition:all 1s;
+}
+.start:hover{
+    transform:scale(1.1);
+}
+.difficult{
+    width:839px;height:402px;
+    background:url(img/difficult.png) no-repeat;
+    position: absolute;
+    left:0;right:0;top:0;bottom:0;
+    margin:auto;
+    display:none;
+}
+.choosebox{
+    width:100%;height:93px;
+    margin-top:200px;
+    display:flex;
+    justify-content:space-around;
+}
+.choosebox div{
+    width:214px;height:93px;
+    cursor:pointer;
+    transition:all .5s;
+}
+.choosebox div:hover{
+    transform:scale(1.1);
+}
+.easy{
+    background:url(img/easy.png) no-repeat center;
+}
+.medium{
+    background:url(img/medium.png) no-repeat center;
+    border:1px solid red;
+}
+.hard{
+    background:url(img/hard.png) no-repeat center;
+}
+.back{
+    width:110px;height:110px;
+    background:url(img/quit.png);
+    margin:15px auto;
+    cursor:pointer;
+    transition:all 1s;
+}
+.back:hover{
+    transform:rotate(360deg);
+}
+.show{
+    width:800px;height:65px;
+    margin:0 auto;
+    display:none;
+    position:relative;
+    z-index:1;
+}
+.scor{
+    width:195px;height:65px;
+    background:url(img/scor.png) no-repeat center;
+    float:left;
+}
+.life{
+    width:239px;height:65px;
+    background:url(img/life.png) no-repeat center;
+    float:left;
+    margin-left:30px;
+    position:relative;
+}
+.stop{
+    width:65px;height:65px;
+    background:url(img/stop.png) no-repeat center;
+    background-size:100%;
+    float:right;
+}
+.scorinner{
+    width:100px;height:30px;
+    margin-left:75px;
+    margin-top:25px;
+}
+.lifeinner{
+    width:165px;height:40px;
+    background:#a8753f;
+    position:absolute;
+    right:10px;top:16px;
+    z-index:-1;
+    border-radius:5px;
+    box-shadow:0 0 10px #000 inset;
+    background-image:url(img/progress.png);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    transition:all 1s;
+}
+.letter{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    background-size: 100% 100%;
+}
+.mask,.mask2{
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.5);
+    position: absolute;
+    left:0;top:0;
+    display:none;
+    z-index:99;
+}
+.overbox{
+    width:484px;height:419px;
+    background:url(img/over.png) no-repeat center;
+    position: absolute;
+    left:0;right:0;top:0;bottom:0;
+    margin:auto;
+}
+.score{
+    width:100px;height:40px;
+    margin-left:250px;
+    margin-top:150px;
+    line-height:40px;
+}
+.maxscore{
+    width:100px;height:40px;
+    margin-left:250px;
+    margin-top:5px;
+    line-height:40px;
+}
+.btns{
+    width:250px;height:93px;
+    margin:0 auto;
+    margin-top:30px;
+}
+.restart{
+    width:93px;height:93px;
+    background:url(img/restart.png);
+    float:left;
+    cursor:pointer;
+    transition:all 1s;
+}
+.restart:hover{
+    transform:rotate(360deg);
+}
+.quit{
+    width:93px;height:93px;
+    background:url(img/quit.png);
+    float:right;
+    cursor:pointer;
+    background-size:100% 100%;
+    transition:all 1s;
+}
+.quit:hover{
+    transform:translateX(-30px);
+}
+.stopbox{
+    width:470px;height:220px;
+    background:url(img/stopbox.png);
+    position:absolute;
+    left:0;right:0;top:0;bottom:0;
+    margin:auto;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-around;
+}
+.continue{
+    width:93px;height:93px;
+    background:url(img/continue.png);
+    margin-bottom:30px;
+    cursor:pointer;
+    transition:all 1s;
+}
+.continue:hover{
+    transform:scale(1.1);
+}
+.stop-restart{
+    width:93px;height:93px;
+    background:url(img/restart.png);
+    margin-bottom:30px;
+    cursor:pointer;
+    transition:all 1s;
+}
+.stop-restart:hover{
+    transform:rotate(360deg);
+}
+.stop-quit{
+    width:93px;height:93px;
+    background:url(img/quit.png);
+    background-size:100% 100%;
+    margin-bottom:30px;
+    cursor:pointer;
+    transition:all 1s;
+}
+.stop-quit:hover{
+    transform:translateX(-30px);
+}

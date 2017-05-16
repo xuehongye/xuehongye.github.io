@@ -1,208 +1,802 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title>Border Animation Effect with SVG</title>
-        <meta name="description" content="Border Animation Effect: Recreating the effect seen on carlphilippebrenner.com with SVG" />
-        <meta name="keywords" content="svg, border effect, animated border, line, grid item, hover, css" />
-        <meta name="author" content="Codrops" />
-        <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component.css" />
-        <link rel="stylesheet" href="css/base.css">
-        <link rel="stylesheet" href="css/shangehua.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link href="css/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <nav class="big">
-            <div class="warp">
-                Personal
-                <div id="menu2" class="menu">
-                    <ul>
-                        <li><a href="#">Intro</a></li>
-                        <li><a href="#">Exper</a></li>
-                        <li><a href="#">Achive</a></li>
-                        <li><a href="#">Produ</a></li>
-                    </ul>
-                    <div class="cls"></div>
-                </div>
-                <!--<div class="fang">-->
-                    <!--<ul>-->
-                        <!--<li class="jieshao"><a href="../凡客/index.html">Intro</a></li>-->
-                        <!--<li class="jingli"><a href="../小米/index.html">Exper</a></li>-->
-                        <!--<li class="chengjiu"><a href="../苹果/index.html">Achive</a></li>-->
-                        <!--<li class="zuopin"><a href="../天猫移动端/index.html">Produ</a></li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            </div>
-        </nav>
-         <nav class="small">
-            <div class="warp">
-                Personal
-            </div>
-        </nav>
-        
-        <div class="container-fluid">
-             <div class="container">
-                <div id="cubeTransition">
-                    <div class="page1"><h2>cubeTransition.js</h2></div>
-                    <div class="page2"><h2 style='display:none'>Elegant,</h2></div>
-                    <div class="page3"><h2 style='position:absolute;left:0px;top:-150px'>exected!</h2></div>
-                    <div class="page4"><h2>Simple.</h2></div>
-                    <ul id="bullets"></ul>
-                </div>
-             </div>
-        </div>
-  
 
-        <div class="content">
-            <section class="demo-2">
-                <div class="grid">
-                    <div class="box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
-                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
-                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
-                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
-                        </svg>
-                        <h3>P</h3>
-                        <span>PC端</span>
-                        <div class="aa mlj1" style="position: absolute;left:0;right:0;bottom:60px;">
-                            <a href="../top cat/index.html">天猫</a>
-                            <a href="../China Mobile/index.html">中国移动</a>
-                            <a href="../fanke/index.html">凡客</a>
-                        </div>  
-                        <div class="aa mlj2" style="position: absolute;left:0;right:0;bottom:30px">
-                            <a href="../jingdong/index.html">京东</a>
-                            <a href="../meishi/index.html">美食</a>
-                            <a href="../xiaomi/index.html">小米</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
-                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
-                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
-                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
-                        </svg>
-                        <h3>X</h3>
-                        <span>响应式</span>
-                        <div class="aa aas " style="position: absolute;left:0;right:0;bottom:0px">
-                            <a href="../apple/index.html">苹果</a>
-                            <a href="../shafa/index.html">沙发网</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
-                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
-                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
-                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
-                        </svg>
-                        <h3>G</h3>
-                        <span>游戏</span>
-                        <div class="aa asl mlj1" style="position: absolute;left:0;right:0;bottom:60px">
-                            <a href="../Game/index.html">打字游戏</a>
-                            <a href="../saolei/saolei.html">扫雷</a>
-                        </div>
-                        <div class="aa asl mlj2" style="position: absolute;left:0;right:0;bottom:30px;">
-                            <a href="../huaban/huaban.html">画板</a>
-                            <a href="../todolist/todolist.html">记事本</a>
-                        </div>
-                    </div>
-                </div><!-- /grid -->
-            </section>
-        </div>
-        <footer>
-            <div class="footer1">
-                <div class="left">
-                    Copyright © 2016.Company name All rights reserved.
-                </div>
-                <ul class="right">
-                    <li>Skype</li>
-                    <li>Linked</li>
-                    <li>Twitter</li>
-                    <li>Facebook</li>
-                </ul>
-            </div>
-            <!-- <div class="footer2">
-                <div class="top">
-                    Copyright © 2016.Company name All rights reserved.
-                </div>
-                <ul class="bottom">
-                    <li>Skype</li>
-                    <li>Linked </li>
-                    <li>Twitter</li>
-                    <li>Facebook</li>
-                </ul>
-            </div> -->
-        </footer>
-    </body>
-    <script src="js/jQuery.js"></script>
-    <script language="javascript">
-        $(document).ready(function() {
-            $("#menu2 li a").wrapInner( '<span class="out"></span>' );
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            $("#menu2 li a").each(function() {
-                $( '<span class="over">' +  $(this).text() + '</span>' ).appendTo( this );
-            });
+<!---<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800,900" rel="stylesheet" type="text/css">--->
 
-            $("#menu2 li a").hover(function() {
-                $(".out",	this).stop().animate({'top':	'90px'},	300); // move down - hide
-                $(".over",	this).stop().animate({'top':	'0px'},		300); // move down - show
 
-            }, function() {
-                $(".out",	this).stop().animate({'top':	'0px'},		300); // move up - show
-                $(".over",	this).stop().animate({'top':	'-90px'},	300); // move up - hide
-            });
+<!-- Libs CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/streamline-icon.css" rel="stylesheet" />
+<link href="css/v-nav-menu.css" rel="stylesheet" />
+<link href="css/v-portfolio.css" rel="stylesheet" />
+<link href="css/v-blog.css" rel="stylesheet" />
+<link href="css/v-animation.css" rel="stylesheet" />
+<link href="css/v-bg-stylish.css" rel="stylesheet" />
+<link href="css/v-shortcodes.css" rel="stylesheet" />
+<link href="css/theme-responsive.css" rel="stylesheet" />
+<link href="plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
+<link href="plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
 
-        });
+<!-- Current Page CSS -->
+<link href="plugins/rs-plugin/css/settings.css" rel="stylesheet" />
+<link href="plugins/rs-plugin/css/custom-captions.css" rel="stylesheet" />
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
 
-    </script>
-    <script>
-function animationIn(i){
-console.log(i,'i\'m in')
-switch(i) {
-    case 1:
-        $('.page2 h2').fadeIn();
-        break;
-    case 2:
-        $('.page3 h2').animate({top:'40%',left:'30%'},1000);
-        break;
-    case 3:
-               setTimeout(function(){
-         $('.page4 h2').addClass('ani')
-         console.log('hhh')
-        },0)
-        break;
-    default:
-        ;
-}
-}
+<!--fonts-->
+<!--<link rel="stylesheet" href="css/fonts/FontAwesome.otf">-->
+<!--<link rel="stylesheet" href="css/fonts/fontawesome-webfont.eot">-->
+<!--<link rel="stylesheet" href="css/fonts/fontawesome-webfont.svg">-->
+<!--<link rel="stylesheet" href="css/fonts/fontawesome-webfont.ttf">-->
+<!--<link rel="stylesheet" href="css/fonts/fontawesome-webfont.woff">-->
+<!--<link rel="stylesheet" href="css/fonts/fontawesome-webfont.woff2">-->
+<!--<link rel="stylesheet" href="css/fonts/glyphicons-halflings-regular.eot">-->
+<!--<link rel="stylesheet" href="css/fonts/glyphicons-halflings-regular.svg">-->
+<!--<link rel="stylesheet" href="css/fonts/glyphicons-halflings-regular.ttf">-->
+<!--<link rel="stylesheet" href="css/fonts/glyphicons-halflings-regular.woff">-->
+<!--<link rel="stylesheet" href="css/fonts/Museo_Slab_300-webfont.ttf">-->
+<!--<link rel="stylesheet" href="css/fonts/sourcesanspro-bold-webfont.ttf">-->
+</head>
 
-function animationOut(i){
-console.log(i,'i\'m out')
-switch(i) {
-    case 1:
-        $('.page2 h2').fadeOut();
-        break;
-    case 2:
-        $('.page3 h2').animate({top:0,left:0},1000);
-        break;
-    case 3:
-        $('.page4 h2').removeClass('ani')
-        break;
-    default:
-        ;
-}
-}
-</script>
-<script src='js/mousewheel.js'></script>
-<script src="js/jquery.touchSwipe.js"></script>
-<script src="js/cubeTransition.js"></script>
+<body>
 
+<!--Header-->
+<div class="header-container">
+	<header class="header fixed clearfix">
+
+		<div class="container">
+
+			<!--Site Logo-->
+			<div class="logo">
+				<a href="index.html">
+					<img alt="Volvox" src="img/logo.png" data-logo-height="35">
+				</a>
+			</div>
+			<!--End Site Logo-->
+
+			<div class="navbar-collapse nav-main-collapse collapse">
+
+				<!--Header Search-->
+				<div class="search" id="headerSearch">
+					<a href="#" id="headerSearchOpen"><i class="fa fa-search"></i></a>
+					<div class="search-input">
+						<form id="headerSearchForm" action="#" method="get">
+							<div class="input-group">
+								<input type="text" class="form-control search" name="q" id="q" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+								</span>
+							</div>
+						</form>
+						<span class="v-arrow-wrap"><span class="v-arrow-inner"></span></span>
+					</div>
+				</div>
+				<!--End Header Search-->
+				<!--Main Menu-->
+				<nav class="nav-main mega-menu">
+					<ul class="nav nav-pills nav-main" id="mainMenu">
+						<li class="dropdown active">
+							<a class="dropdown-toggle" href="#home-slider-wrap">Home <i class="fa fa-caret-down"></i></a>
+						</li>
+						<li class="dropdown mega-menu-item mega-menu-fullwidth">
+							<a class="dropdown-toggle" href="#introduce">introduce <i class="fa fa-caret-down"></i></a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" href="#rate">rate <i class="fa fa-caret-down"></i></a>
+						</li>
+						<li class="dropdown mega-menu-item mega-menu-fullwidth">
+							<a class="dropdown-toggle" href="#works">works <i class="fa fa-caret-down"></i></a>
+						</li>
+
+						<li class="dropdown">
+							<a class="dropdown-toggle menu-icon" href="#skills">skills <i class="fa fa-caret-down"></i></a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" href="#photos">photos <i class="fa fa-caret-down"></i></a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" href="#contactus">Contact <i class="fa fa-caret-down"></i></a>
+						</li>
+					</ul>
+				</nav>
+				<!--End Main Menu-->
+			</div>
+			<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+				<i class="fa fa-bars"></i>
+			</button>
+		</div>
+
+		<span class="v-header-shadow"></span>
+	</header>
+</div>
+<!--End Header-->
+
+<div id="container">
+
+	<!--Set your own slider options. Look at the v_RevolutionSlider() function in 'theme-core.js' file to see options-->
+	<div class="home-slider-wrap fullwidthbanner-container" id="home-slider-wrap">
+		<div class="v-rev-slider" data-slider-options='{ "startheight":500 }'>
+			<ul>
+				<!-- SLIDE  -->
+				<li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+					<!-- MAIN IMAGE -->
+					<img src="img/slider/banner.jpg" alt="fullslide6" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+					<!-- LAYERS -->
+					<!-- LAYER NR. 1 -->
+					<div class="tp-caption light_heavy_70_shadowed lfb ltt tp-resizeme"
+						 data-x="60"
+						 data-y="110"
+						 data-speed="600"
+						 data-start="800"
+						 data-easing="Power4.easeOut"
+						 data-splitin="none"
+						 data-splitout="none"
+						 data-elementdelay="0.01"
+						 data-endelementdelay="0.1"
+						 data-endspeed="500"
+						 data-endeasing="Power4.easeIn"
+						 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
+						MODERN DESIGN
+					</div>
+
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption light_medium_30 lfb ltt tp-resizeme"
+						 data-x="60"
+						 data-y="200"
+						 data-speed="600"
+						 data-start="900"
+						 data-easing="Power4.easeOut"
+						 data-splitin="none"
+						 data-splitout="none"
+						 data-elementdelay="0.01"
+						 data-endelementdelay="0.1"
+						 data-endspeed="500"
+						 data-endeasing="Power4.easeIn"
+						 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+						Simple yet powerful options allow
+						<br />
+						you to create & design any type<br />
+						of website you can imagine.
+						<br />
+						<span style="font-size: 24px; font-weight: 400;">―  Volvox Team</span>
+					</div>
+				</li>
+
+				<li data-transition="fade" data-slotamount="7" data-masterspeed="600">
+					<img src="img/slider/banner1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+					<div class="tp-caption lfb light_heavy_70_shadowed stb white-color"
+						 data-x="center" data-hoffset="0"
+						 data-y="center" data-voffset="-100"
+						 data-speed="800"
+						 data-start="600"
+						 data-easing="Circ.easeInOut"
+						 data-splitin="none"
+						 data-splitout="none"
+						 data-elementdelay="0"
+						 data-endelementdelay="0"
+						 data-endspeed="600"
+						 style="z-index: 2; line-height: 60px; letter-spacing: 7px; font-size: 60px;">
+						RESPONSIVE DESIGN
+					</div>
+
+					<div class="tp-caption v-caption-h1 lfb st center"
+						 data-x="center" data-hoffset="0"
+						 data-y="bottom" data-voffset="-250"
+						 data-speed="700"
+						 data-start="1100"
+						 data-easing="Circ.easeInOut"
+						 data-splitin="none"
+						 data-splitout="none"
+						 data-elementdelay="0"
+						 data-endelementdelay="0"
+						 data-endspeed="600">
+						Simple yet powerful options allow you to create any
+						<br />
+						type of website you can imagine.
+					</div>
+
+					<div class="tp-caption lfb stb"
+						 data-x="center" data-hoffset="0"
+						 data-y="bottom" data-voffset="-150"
+						 data-speed="700"
+						 data-start="1700"
+						 data-easing="Circ.easeInOut"
+						 data-splitin="none"
+						 data-splitout="none"
+						 data-elementdelay="0"
+						 data-endelementdelay="0"
+						 data-endspeed="600">
+						<a href='#' class="btn v-btn v-second-light">FIND OUT MORE</a>
+					</div>
+
+					<!--<div class="v-slider-overlay overlay-colored"></div>-->
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="shadow-right"></div>
+	</div>
+
+	<div class="v-page-wrap no-bottom-spacing">
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-mini"></div>
+			</div>
+		</div>
+
+		<div class="container" id="introduce">
+
+			<div class="row">
+
+				<div class="v-content-wrapper">
+
+					<div class="col-sm-4">
+						<div class="feature-box feature-box-secundary-one v-animation" data-animation="grow" data-delay="0">
+							<div class="feature-box-icon small">
+								<i class="fa fa-laptop v-icon"></i>
+							</div>
+							<div class="feature-box-text clearfix">
+								<h3>Front End Engineer</h3>
+								<div class="feature-box-text-inner">
+									<p>
+										Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+										per inceptos himenaeos. Nulla nunc dui, tristique in semper vel.
+									</p>
+
+									<a href="#" class="read-more">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="feature-box feature-box-secundary-one v-animation" data-animation="grow" data-delay="200">
+							<div class="feature-box-icon small">
+								<i class="fa fa-leaf v-icon"></i>
+							</div>
+							<div class="feature-box-text">
+								<h3>Full Stack Developer</h3>
+								<div class="feature-box-text-inner">
+									<p>
+										Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+										per inceptos himenaeos. Nulla nunc dui, tristique in semper vel.<br />
+									</p>
+									<a href="#" class="read-more">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="feature-box feature-box-secundary-one v-animation" data-animation="grow" data-delay="400">
+							<div class="feature-box-icon small">
+								<i class="fa fa-random v-icon"></i>
+							</div>
+							<div class="feature-box-text">
+								<h3>UI Designer</h3>
+								<div class="feature-box-text-inner">
+									<p>
+										Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+										per inceptos himenaeos. Nulla nunc dui, tristique in semper vel.<br />
+									</p>
+									<a href="#" class="read-more">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-mini"></div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="v-spacer col-sm-12 v-height-standard"></div>
+		</div>
+
+		<div class="container" id="rate">
+			<div class="row center v-counter-wrap">
+				<div class="col-sm-3">
+					<i class="icon-star-1 v-icon icn-holder"></i>
+					<div class="v-counter">
+						<div class="count-number" data-from="0" data-to="6218" data-speed="1000" data-refresh-interval="25"></div>
+						<div class="count-divider"><span></span></div>
+						<h6 class="v-counter-text">Line Of Code Written</h6>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<i class="icon-hand-like-2 v-icon icn-holder"></i>
+					<div class="v-counter">
+						<div class="count-number" data-from="0" data-to="1448" data-speed="1500" data-refresh-interval="25"></div>
+						<div class="count-divider"><span></span></div>
+						<h6 class="v-counter-text">Cups Of Coffee</h6>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<i class="icon-crown-3 v-icon icn-holder"></i>
+					<div class="v-counter">
+						<div class="count-number" data-from="0" data-to="2650" data-speed="2000" data-refresh-interval="25"></div>
+						<div class="count-divider"><span></span></div>
+						<h6 class="v-counter-text">Fineshed Projects</h6>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<i class="icon-screen-1 v-icon icn-holder"></i>
+					<div class="v-counter">
+						<div class="count-number" data-from="0" data-to="5265" data-speed="2500" data-refresh-interval="25"></div>
+						<div class="count-divider"><span></span></div>
+						<h6 class="v-counter-text">Lorem Input Amet</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-small"></div>
+			</div>
+		</div>
+
+		<div id="works" class="v-parallax v-bg-stylish v-bg-stylish-v4" style="background-image: url(img/slider/slider3.png);">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-8 col-sm-offset-4">
+						<p class="v-smash-text-large">
+							<span>Ultimate Website <strong>Knitted works show.</strong></span>
+						</p>
+
+						<p class="lead" style="color: #FFF;">
+							Responsive &amp; optimized for mobile devices.
+						</p>
+
+						<div class="v-spacer col-sm-12 v-height-mini"></div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-sm-4">
+
+					</div>
+					<div class="col-sm-4">
+						<div class="feature-box left-icon-v2 v-animation" data-animation="flip-y" data-delay="200">
+							<i class="fa fa-star-o v-icon icn-holder medium"></i>
+							<div class="feature-box-text">
+								<h3><a href="../top%20cat/index.html">天猫</a> <a href="../xiaomi/index.html">小米</a></h3>
+								<div class="feature-box-text-inner">
+									<p>
+										<strong>PC端</strong>  作品
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="feature-box left-icon-v2 v-animation" data-animation="flip-y" data-delay="400">
+							<i class="fa fa-image v-icon icn-holder medium"></i>
+							<div class="feature-box-text">
+								<h3><a href="../China%20Mobile/index.html">中国移动通信</a></h3>
+								<div class="feature-box-text-inner">
+									<p>
+										<strong>PC端</strong>  作品
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="v-spacer col-sm-12 v-height-small"></div>
+
+				<div class="row">
+					<div class="col-sm-4">
+
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature-box left-icon-v2 v-animation" data-animation="flip-y" data-delay="800">
+							<i class="fa fa-desktop v-icon icn-holder medium"></i>
+							<div class="feature-box-text">
+								<h3><a href="../fanke/index.html">凡客</a> <a href="../jingdong/index.html">京东</a></h3>
+								<div class="feature-box-text-inner">
+									<p>
+										 <strong>PC端</strong>  作品
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature-box left-icon-v2 v-animation" data-animation="flip-y" data-delay="1000">
+							<i class="fa fa-flask v-icon icn-holder medium"></i>
+							<div class="feature-box-text">
+								<h3><a href="../todolist/todolist.html">toodlist</a> <a href="../huaban/huaban.html">画板</a></h3>
+								<div class="feature-box-text-inner">
+									<p>
+										<strong>动手操作类</strong>  作品
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="v-spacer col-sm-12 v-height-small"></div>
+
+				<div class="row">
+					<div class="col-sm-4">
+
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature-box left-icon-v2 v-animation" data-animation="flip-y" data-delay="1400">
+							<i class="fa fa-location-arrow v-icon icn-holder medium"></i>
+							<div class="feature-box-text">
+								<h3><a href="../apple/index.html">苹果</a> <a href="../shafa/index.html">沙发网</a></h3>
+								<div class="feature-box-text-inner">
+									<p>
+										<strong>响应式网站</strong>  作品
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature-box left-icon-v2 v-animation" data-animation="flip-y" data-delay="1600">
+							<i class="fa fa-cloud-download v-icon icn-holder medium"></i>
+							<div class="feature-box-text">
+								<h3><a href="../saolei/saolei.html">扫雷</a> <a href="../Game/index.html">字母游戏</a></h3>
+								<div class="feature-box-text-inner">
+									<p>
+										<strong>益智类游戏</strong>  作品
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="v-spacer col-sm-12 v-height-small"></div>
+
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-4">
+						<a class="btn v-btn v-second-dark v-animation" data-animation="fade-from-right" data-delay="800" href="#"><i class="fa fa-fire"></i>Purchase Now</a>
+						<a class="btn v-btn v-second-dark v-animation" data-animation="fade-from-right" data-delay="850" href="#"><i class="fa fa-fire"></i>See More</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-big"></div>
+			</div>
+		</div>
+
+		<div class="container" id="skills">
+			<div class="row">
+				<div class="col-sm-6">
+					<img src="img/static/phones1.png" class="v-animation" data-animation="fade-from-bottom" data-delay="200" width="500" height="441">
+				</div>
+				<div class="col-sm-6">
+					<p class="v-smash-text-large">Skills Show</p>
+					<div class="horizontal-break left"></div>
+
+					<p class="v-lead">
+						<span class="dropcap3">S</span>oothed again, but only soothed to deeper gloom, Ahab,
+						who had sterned off from the whale, sat intently watching
+						his final wanings from the now tranquil boat. For that strange
+						spectacle observable in all sperm whales dying .
+					</p>
+
+					<div class="v-wrapper pull-top-big">
+						<div class="progress-bars">
+							<div class="progress-label">
+								<span>HTML/CSS</span>
+							</div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%">
+									<span class="progress-bar-tooltip">100%</span>
+								</div>
+							</div>
+							<div class="progress-label">
+								<span>Bootstrap/PHP</span>
+							</div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-primary" data-appear-progress-animation="85%" data-appear-animation-delay="300">
+									<span class="progress-bar-tooltip">85%</span>
+								</div>
+							</div>
+
+							<div class="progress-label">
+								<span>Design/Photoshop</span>
+							</div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-primary" data-appear-progress-animation="75%" data-appear-animation-delay="500">
+									<span class="progress-bar-tooltip">75%</span>
+								</div>
+							</div>
+							<div class="progress-label">
+								<span>JS/Jquery</span>
+							</div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-primary" data-appear-progress-animation="95%" data-appear-animation-delay="700">
+									<span class="progress-bar-tooltip">95%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-big"></div>
+			</div>
+		</div>
+
+
+
+
+		<div class="v-full-width-text v-bg-stylish v-bg-stylish-v4" id="photos">
+			<div class="container">
+				<div class="row center">
+					<div class="col-sm-12">
+						<p class="v-smash-text-large">
+							<span>Picture display of works</span>
+						</p>
+
+						<div class="horizontal-break"></div>
+
+						<p class="v-lead" style="color: #999;">
+							Responsive & optimized for mobile devices.<br />
+							Completely without coding skills!
+						</p>
+					</div>
+				</div>
+
+				<div class="v-spacer col-sm-12 v-height-mini"></div>
+
+				<div class="row center">
+
+					<div class="col-sm-12">
+						<div class="carousel-wrap no-padding">
+
+							<div class="owl-carousel" data-plugin-options='{"items": 4, "singleItem": false, "pagination": true}'>
+								<div class="item">
+									<figure class="animated-overlay overlay-alt">
+										<img src="img/static/03@2x.jpg" />
+										<a href="#?single.html" class="link-to-post"></a>
+										<figcaption>
+											<div class="thumb-info thumb-info-v2"><i class="fa fa-angle-right"></i></div>
+										</figcaption>
+									</figure>
+									<div class="v-portfolio-item-info">
+										<h3 class="v-portfolio-item-title">
+											<a href="#?single.html" class="link-to-post">Suspendisse Euismod</a>
+										</h3>
+									</div>
+								</div>
+
+								<div class="item">
+									<figure class="animated-overlay overlay-alt">
+										<div class="flexslider thumb-slider">
+											<ul class="slides">
+												<li>
+													<a href="#?single-fw-slides.html" class="link-to-post">
+														<img src='img/static/04@2x.jpg' />
+													</a>
+												</li>
+												<li>
+													<a href="#?single-fw-slides.html" class="link-to-post">
+														<img src='img/static/10@2x.jpg' />
+													</a>
+												</li>
+											</ul>
+										</div>
+									</figure>
+									<div class="v-portfolio-item-info">
+										<h3 class="v-portfolio-item-title">
+											<a href="#?single.html" class="link-to-post">Fringilla Suscipit</a>
+										</h3>
+									</div>
+								</div>
+
+								<div class="item">
+									<figure class="animated-overlay overlay-alt">
+										<img src="img/static/09@2x.jpg" />
+										<a href="#?single.html" class="link-to-post"></a>
+										<figcaption>
+											<div class="thumb-info thumb-info-v2"><i class="fa fa-angle-right"></i></div>
+										</figcaption>
+									</figure>
+									<div class="v-portfolio-item-info">
+										<h3 class="v-portfolio-item-title">
+											<a href="#?single.html" class="link-to-post">Mauris Quis Sapien</a>
+										</h3>
+									</div>
+								</div>
+
+								<div class="item">
+									<figure class="animated-overlay overlay-alt">
+										<img src="img/static/08@2x.jpg" />
+										<a href="#?single.html" class="link-to-post"></a>
+										<figcaption>
+											<div class="thumb-info thumb-info-v2"><i class="fa fa-angle-right"></i></div>
+										</figcaption>
+									</figure>
+									<div class="v-portfolio-item-info">
+										<h3 class="v-portfolio-item-title">
+											<a href="#?single.html" class="link-to-post">Vivamus Tristique</a>
+										</h3>
+									</div>
+								</div>
+
+								<div class="item">
+									<figure class="animated-overlay overlay-alt">
+										<img src="img/static/06@2x.jpg" />
+										<a href="#?single.html" class="link-to-post"></a>
+										<figcaption>
+											<div class="thumb-info thumb-info-v2"><i class="fa fa-angle-right"></i></div>
+										</figcaption>
+									</figure>
+									<div class="v-portfolio-item-info">
+										<h3 class="v-portfolio-item-title">
+											<a href="#?single.html" class="link-to-post">Cras Aliquam</a>
+										</h3>
+									</div>
+								</div>
+
+								<div class="item">
+									<figure class="animated-overlay overlay-alt">
+										<img src="img/static/01@2x.jpg" />
+										<a href="#?single.html" class="link-to-post"></a>
+										<figcaption>
+											<div class="thumb-info thumb-info-v2"><i class="fa fa-angle-right"></i></div>
+										</figcaption>
+									</figure>
+									<div class="v-portfolio-item-info">
+										<h3 class="v-portfolio-item-title">
+											<a href="#?single.html" class="link-to-post">Proin Faucibus</a>
+										</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-standard"></div>
+			</div>
+		</div>
+
+		<div class="container" id="contactus">
+
+			<div class="row center">
+				<div class="col-sm-12">
+					<p class="v-smash-text-large">
+						<span>Contact Me</span>
+					</p>
+					<div class="horizontal-break"></div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-4">
+					<div class="testimonial testimonial-thumb-side v-animation" data-animation="fade-from-bottom" data-delay="0">
+						<div class="testimonial-author">
+							<figure class="featured-thumbnail">
+								<img src="img/team/phone.png">
+							</figure>
+						</div>
+
+						<div class="wrapper">
+							<div class="excerpt">
+								Mobile phones are the main invention of modern technology.They are completely part of our daily lives If we look at our society,we can see that all kinds of people are using mobile phones.
+							</div>
+							<div class="user">- Phone,<span>&nbsp;&nbsp;157xxxxxxxx</span></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="testimonial testimonial-thumb-side v-animation" data-animation="fade-from-bottom" data-delay="200">
+						<div class="testimonial-author">
+							<figure class="featured-thumbnail">
+								<img src="img/team/name.png">
+							</figure>
+						</div>
+
+						<div class="wrapper">
+							<div class="excerpt">
+								Unique Hard Simple Active
+							</div>
+							<div class="user">- Name, <span>&nbsp;&nbsp;Xuehongyan</span></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="testimonial testimonial-thumb-side v-animation" data-animation="fade-from-bottom" data-delay="400">
+						<div class="testimonial-author">
+							<figure class="featured-thumbnail">
+								<img src="img/team/email.png">
+							</figure>
+						</div>
+
+						<div class="wrapper">
+							<div class="excerpt">
+							Transmission can cost nothing or very little.Sending e-mail to many recipients as this results in saving in stationery costs and postage.Message can be sent ab=nywhere in an instant.
+							</div>
+							<div class="user">- Email, <span>1234875522@qq.com</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="v-spacer col-sm-12 v-height-standard"></div>
+			</div>
+		</div>
+
+		<!--Client Carousel v2-->
+		<!--End Client Carousel v2-->
+	</div>
+
+</div>
+
+<!--// BACK TO TOP //-->
+<div id="back-to-top" class="animate-top"><i class="fa fa-angle-up"></i></div>
+
+<!-- Libs -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+<script src="js/jquery.carouFredSel.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/theme-plugins.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/view.min.js?auto"></script>
+
+<script src="plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<script src="js/theme-core.js"></script>
+
+</body>
 </html>
+

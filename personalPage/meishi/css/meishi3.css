@@ -176,7 +176,12 @@ nav .nav-main .xilie li:hover{
 }
 .content .con-main .shencai .li .s-left .tu1{
 	width: 381px;
-	height: 380px;	
+	height: 380px;
+	cursor: pointer;
+}
+.content .con-main .shencai .li .s-left .tu1:hover{
+	transition: all 1s;
+	transform:rotate(360deg);
 }
 .content .con-main .shencai .li .s-right{
 	width: 644px;
